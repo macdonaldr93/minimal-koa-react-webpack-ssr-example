@@ -5,21 +5,29 @@ class App extends Component {
     super(props);
 
     this.state = {
+      email: '',
       count: 0
     };
 
     this.incrementCount = this.incrementCount.bind(this);
     this.decrementCount = this.decrementCount.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      email: document.getElementById('exampleInputEmail1').value
+    });
   }
 
   render() {
-    const { count } = this.state;
+    const { count, email } = this.state;
     const { ssr = false } = this.props;
 
     const pageTitle = ssr ? (
-      <h1>This page is server-side renderd</h1>
+      <h1>This page is server-side rendered</h1>
     ) : (
-      <h1>This page is client-side renderd</h1>
+      <h1>This page is client-side rendered</h1>
     );
 
     return (
@@ -48,6 +56,16 @@ class App extends Component {
         </nav>
 
         <main role="main" className="container">
+          <input
+            type="email"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            onChange={this.handleChange}
+            value={email}
+          />
+          <hr />
           <div className="jumbotron">
             {pageTitle}
             <p className="lead">
@@ -96,6 +114,14 @@ class App extends Component {
     this.setState(prevState => ({
       count: --prevState.count
     }));
+  }
+
+  handleChange(event) {
+    const email = event.target.value;
+
+    this.setState({
+      email
+    });
   }
 }
 
