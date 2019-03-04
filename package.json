@@ -1,0 +1,35 @@
+{
+  "name": "ssr-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "start": "node build/server.bundle.js",
+    "build": "npm run build:js",
+    "build:js": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "koa": "2.7.0",
+    "koa-logger": "3.2.0",
+    "koa-router": "7.4.0",
+    "koa-static": "5.0.0",
+    "react": "16.8.3",
+    "react-dom": "16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.5",
+    "html-loader": "0.5.5",
+    "rimraf": "2.6.3",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.2.3",
+    "webpack-node-externals": "1.7.2"
+  }
+}
