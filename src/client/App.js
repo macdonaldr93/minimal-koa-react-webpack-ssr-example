@@ -53,40 +53,32 @@ class App extends Component {
             <p className="lead">
               Try view source and see what the browser actually receives!
             </p>
-            <ul>
-              <li>
-                <a href="/csr">Client-side rendered React</a>
-              </li>
-              <li>
-                <a href="/ssr">Server-side rendered React</a>
-              </li>
-            </ul>
-          </div>
-          <div className="h2">{count}</div>
-          <div
-            className="btn-toolbar"
-            role="toolbar"
-            aria-label="Toolbar with button groups"
-          >
+            <div className="h2">{count}</div>
             <div
-              className="btn-group mr-2"
-              role="group"
-              aria-label="First group"
+              className="btn-toolbar"
+              role="toolbar"
+              aria-label="Toolbar with button groups"
             >
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={this.incrementCount}
+              <div
+                className="btn-group mr-2"
+                role="group"
+                aria-label="First group"
               >
-                Increment
-              </button>
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={this.decrementCount}
-              >
-                Decrement
-              </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={this.incrementCount}
+                >
+                  Increment
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={this.decrementCount}
+                >
+                  Decrement
+                </button>
+              </div>
             </div>
           </div>
         </main>
