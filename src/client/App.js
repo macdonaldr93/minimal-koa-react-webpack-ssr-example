@@ -14,12 +14,6 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({
-      email: document.getElementById('exampleInputEmail1').value
-    });
-  }
-
   render() {
     const { count, email } = this.state;
     const { ssr = false } = this.props;
